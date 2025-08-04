@@ -1,4 +1,4 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=20028219)
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=20028309)
 # Web Lab - Server with Socket
  This lab demonstrate how to create a simple web server that run on a localhost at specified network port. Server utilises Java's thread to keep server running to wait for a request.
 
@@ -20,7 +20,10 @@ The `MockWebServer` in package `th.mfu` serves the web server in our system. It 
 4. Finally, close the client socket 
 5. Study the code in `main()` and tell me What it does?
 ```
- write your through here.
+1.Read the port number from args[0] (or use a default value of 8080 if not provided).
+2.Create an instance of MockWebServer with the specified port.
+3.Start a new thread to run the MockWebServer in the background, which will call the run() method to wait for and respond to client requests.
+4.Display a message indicating that the server has started, and then return from the main() method after initiating the server.
 ```
 6. Run the `main()`, point the web browser to `http://localhost:8080` and `http://localhost:8081`
 It should shows a simple HTML with the word such as  `Hello, Web! on Port 8080`.
@@ -52,9 +55,17 @@ Think about the following,  modify the code to experiment it and put your though
 - What would be the benefit of running many instances?
 
 ```
-  Your thought here...
+1.Running on a Different Port:
+You can specify a port when starting the MockWebServer
+2.Running Multiple Instances:
+Create and start multiple instances on different ports
+3.Custom HTML Content:
+Serve custom HTML content by setting the response body
+4.Benefits of Multiple Instances:
+Simulate Different Services: Mock various APIs your application interacts with.
+Load Testing: Assess how your application handles multiple endpoints.
+Isolated Testing: Test different versions or environments of services.
 ```
 **Please push the code back to Github to submit this lab**
 After you push, ensure you have green checkmark on the repository.
 <img width="692" height="201" alt="image" src="https://github.com/user-attachments/assets/0a4ab63d-7b6e-4711-90e7-b472bc11db2d" />
-
